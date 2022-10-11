@@ -7,9 +7,75 @@
     <title>To Do App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
 </head>
 <body>
-    
+    <section class="wrapper">
+        <div class="task-input">
+            <img src="./bars.svg" alt="icon">
+            <input type="text" placeholder="Add new task">
+        </div>
+
+        <div class="controls">
+            <div class="filters">
+                <span id="all">All</span>
+                <span id="Pending">Pending</span>
+                <span id="Completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+        </div>
+
+        <ul class="task-box">
+            <li class="task">
+                <label for="1">
+                    <input type="checkbox" id="1">
+                    <p>Finish DOM Course</p>
+                </label>
+                <div class="settings">
+                    <i class="uil uil-ellipsis-h"></i>
+                </div>
+            </li>
+
+            <li class="task">
+                <label for="1">
+                    <input type="checkbox" id="1">
+                    <p>Finish Portfolio</p>
+                </label>
+                <div class="settings">
+                    <i class="uil uil-ellipsis-h"></i>
+                </div>
+            </li>
+
+            <li class="task">
+                <label for="1">
+                    <input type="checkbox" id="1">
+                    <p>Start English course</p>
+                </label>
+                <div class="settings">
+                    <i class="uil uil-ellipsis-h"></i>
+                </div>
+            </li>
+
+            <li class="task">
+                <label for="1">
+                    <input type="checkbox" id="1">
+                    <p>Start React Course</p>
+                </label>
+                <div class="settings">
+                    <i class="uil uil-ellipsis-h"></i>
+                </div>
+            </li>
+
+            <li class="task">
+                <label for="1">
+                    <input type="checkbox" id="1">
+                    <p>Exercise 3 days per week</p>
+                </label>
+                <div class="settings">
+                    <i class="uil uil-ellipsis-h"></i>
+                </div>
+            </li>
+        </ul>
+
+    </section>
 </body>
 </html>
