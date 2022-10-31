@@ -49,8 +49,15 @@ body{
     color: #bfbfbf;
 }
 
+.controls, li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .controls{
     display: flex;
+    align-items: center;
     padding: 1.8em 2.5em;
     justify-content: space-between;
     border-bottom: 0.1em solid #ccc;
@@ -62,6 +69,13 @@ body{
     font-size: 1.6em;
     cursor: pointer;
 }
+.filters span:first-child{
+    margin-left: 0;
+}
+
+.filters span .active{
+    color:#3c87ff;  
+}
 
 .controls .clear-btn{
     outline: none;
@@ -69,5 +83,68 @@ body{
     color: #fff;
     background: #3c87ff;
     border-radius: 0.4em;
-    padding: 0.3em 1em;
+    padding: 0.4em 1em;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.task-box{
+    margin: 2em 2.5em;
+}
+.task-box .task{
+    list-style: none;
+    font-size: 1.7em;
+    margin-bottom: 1.8em;
+    padding-bottom: 1.6em;
+    border-bottom: 0.1em solid #ccc;
+}
+.task-box .task:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.task label{
+    display: flex;
+}
+.task label input{
+    margin-top: 0.6em;
+    margin-right: 1.2em;
+}
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+.settings .task-menu{
+    position: absolute;
+    width: 7.5em;
+    padding: 0.5em 0;
+    background: white;
+    z-index: 2;    
+    right: -0.5em;
+    bottom: -6.5em;
+    box-shadow: 0 0 0.6em rgba(0, 0, 0, 0.15);
+    border-radius: 0.5em;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.3s ease;
+}
+.settings:hover .task-menu{
+    transform: scale(1);
+}
+.task-menu li{
+    height: 1.3em;
+    font-weight: 1.6em;
+    margin-bottom: 0.2em;
+    justify-content: flex-start;
+    padding: 1.5em 1.2em;
+}
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+.task-menu li:hover{
+    background: #f5f5f5;
+}
+
+.task-menu li i{
+    padding-right: 0.8em;
 }
