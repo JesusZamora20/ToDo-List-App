@@ -106,6 +106,10 @@ body{
 .task label{
     display: flex;
 }
+
+.task label p.checked{
+    text-decoration: line-through;
+}
 .task label input{
     margin-top: 0.6em;
     margin-right: 1.2em;
@@ -128,7 +132,7 @@ body{
     transform-origin: top right;
     transition: transform 0.3s ease;
 }
-.settings:hover .task-menu{
+.settings .task-menu.show{
     transform: scale(1);
 }
 .task-menu li{
