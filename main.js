@@ -4,8 +4,6 @@ const filters = document.querySelectorAll(".filters span");
 clearAll = document.querySelector(".clear-btn")
 let toDos = JSON.parse(localStorage.getItem("todo-list"));//getting localstorage todo-list
 
-let editId;
-let isEdited = false;
 
 filters.forEach(btn => {
     btn.addEventListener("click", () =>{
@@ -29,7 +27,6 @@ function showToDo(filter){
                         <div class="settings">
                             <i onClick='showMenu(this)' class="uil uil-ellipsis-h"></i>
                             <ul class="task-menu">
-                                <li onclick="editTask(${id},${toDo.name})"><i class="uil uil-pen">Edit</i></li>
                                 <li onclick="deleteTask(${id})"><i class="uil uil-trash">Delete</i></li>
                             </ul>
                         </div>
@@ -52,11 +49,6 @@ function showMenu(selectedTask){
     })
 }
 
-function editTask(taskId, taskName){
-    editId = taskId;
-    isEdited = true;
-    taskInput.value = taskName;
-}
 
 function deleteTask(deleteId){
     toDos.splice(deleteId, 1);
@@ -85,16 +77,11 @@ function updateStatus(selectedTask){
 taskInput.addEventListener("keyup", e => {
     let userTask = taskInput.value.trim();
     if(e.key == "Enter" && userTask){
-        if(!isEdited){
-            if(!toDos){ //if toDos doesnt exist, create a new Empty array to save toDos
-                toDos = [];
-            }
-            let taskInfo = {name: userTask, status: "pending"};
-            toDos.push(taskInfo);
-        } else{
-            isEdited = false;
-            toDos[editId].name = userTask;
+        if(!toDos){ //if toDos doesnt exist, create a new Empty array to save toDos
+            toDos = [];
         }
+        let taskInfo = {name: userTask, status: "pending"};
+        toDos.push(taskInfo);
         
         taskInput.value = "";
         localStorage.setItem("todo-list",JSON.stringify(toDos));
