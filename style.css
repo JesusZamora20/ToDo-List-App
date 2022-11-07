@@ -73,8 +73,12 @@ body{
     margin-left: 0;
 }
 
-.filters span .active{
-    color:#3c87ff;  
+.active{
+    color: #3c87ff;
+    background: #EDEDEE;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 2px;
 }
 
 .controls .clear-btn{
